@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	int i, j, n, length, r, l;
+	char temp;
+	
+	printf("How many words would you like to enter: ");
+	scanf("%d", &n);
+	
+	char words[n][50];
+	char word[n][50];
+	
+	for(i = 0; i < n; i++)
+	{
+		printf("Enter word %d: ", i+1);
+		scanf("%s", words[i]);
+	}
+	
+	printf("Words: ");
+		for(i = 0; i < n; i++)
+	{
+		printf("%s ", words[i]);
+	}
+	
+	for(i = 0; i < n; i++)
+	{
+		l = 1;
+		length = strlen(words[i]);
+		r = length;
+		for(j = 0; j < r; j++)
+		{
+			word[i][j] = words[i][r-l];
+			l += 1;
+		}
+		if(strcmp(word[i], words[i]) == 0)
+		{
+			printf("\nOutput: %s", word[i]);
+			return 0;
+		}
+	}
+	
+	printf("\nOutput: """);
+	
+	return 0;
+}
